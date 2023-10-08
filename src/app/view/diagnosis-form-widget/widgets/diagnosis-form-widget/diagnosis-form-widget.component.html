@@ -1,0 +1,10 @@
+<app-diagnosis-form-ui
+	(submitForm)="onSubmit($event)"
+	[diagnosises]="diagnosises$ | async"
+	[minDate]="minDate">
+</app-diagnosis-form-ui>
+
+<app-diagnosis-form-details-ui
+	*ngIf="transformedFormData"
+	[data]="transformedFormData">
+</app-diagnosis-form-details-ui>

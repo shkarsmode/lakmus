@@ -1,0 +1,73 @@
+<form 
+	[formGroup]="formGroup"
+	(ngSubmit)="onSubmit()">
+	<div class="row">
+		<b>Дата:</b>
+		<mat-form-field>
+			<input 
+				[matDatepicker]="picker"
+				[min]="minDate"
+				formControlName="date"
+				placeholder="__.__.____"
+				matInput>
+			<mat-datepicker #picker></mat-datepicker>
+			<mat-datepicker-toggle
+				[for]="picker" 
+				matIconSuffix>
+			</mat-datepicker-toggle>
+		</mat-form-field>
+	</div>
+
+	<div class="row">
+		<div><b>Діагнози за ICPC-2</b></div>
+		<ng-container formArrayName="diagnosises">
+			<ng-container *ngFor="let diagnosis of diagnosisesFormArray.controls; index as i" >
+				<div 
+					[formGroupName]="i"
+					class="wrap-diagnosis">
+					<mat-form-field>
+						<mat-label>Діагноз</mat-label>
+						<mat-select 
+							formControlName="diagnosis"
+							(valueChange)="onSelectChange(i)">
+							<mat-option 
+								*ngFor="let diagnosis of diagnosises" 
+								[value]="diagnosis">
+								{{ diagnosis.code }} {{ diagnosis.name }}
+							</mat-option>
+						</mat-select>
+					</mat-form-field>
+
+					<mat-form-field>
+						<mat-label>коментар</mat-label>
+						<input
+							formControlName="comment" 
+							matInput 
+							type="text">
+					</mat-form-field>
+
+					<button
+						(click)="removeDiagnosis(i)" 
+						mat-mini-fab 
+						color="primary">
+						<mat-icon>delete_forever</mat-icon>
+					</button>
+				</div>
+			</ng-container>
+		</ng-container>
+		
+		<button 
+			class="add-more" 
+			(click)="addDiagnosis()">
+			+ додати ще
+		</button>
+	</div>
+
+	<button 
+		[disabled]="formGroup.invalid"
+		class="button-submit"
+		mat-stroked-button 
+		type="submit">
+		Сформувати JSON
+	</button>
+</form>

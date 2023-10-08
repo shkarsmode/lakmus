@@ -1,0 +1,23 @@
+:host {
+	display: block;
+	padding: 20px;
+	border: 1px solid #9D9D9D;
+	border-radius: 5px;
+
+	max-width: 650px;
+	width: 100%;
+
+	// ! remove it
+	margin-left: 50px;
+	margin-top: 50px;
+
+	::ng-deep {
+		b {
+			font-size: 20px;
+		}
+	}
+}
+
+app-diagnosis-form-details-ui {
+	margin-top: 25px;
+}

@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background-color: transparent !important;
+	border: 1px solid #9D9D9D;
+    border-radius: 5px;
+}
+
+.mat-mdc-form-field-subscript-wrapper {
+	display: none;
+}
+
+.mat-mdc-fab.mat-primary, .mat-mdc-mini-fab.mat-primary {
+    --mdc-fab-container-color: #219FD7;
+}
+
+.mat-mdc-outlined-button:not(:disabled) {
+    border-color: #219FD7 !important;
+	color: #219FD7 !important;
+}

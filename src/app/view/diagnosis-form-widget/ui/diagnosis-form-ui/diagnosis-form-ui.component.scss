@@ -1,0 +1,40 @@
+.row {
+	margin-bottom: 20px;
+}
+
+b {
+	margin-right: 15px;
+}
+
+.wrap-diagnosis {
+	display: flex;
+	align-items: center;
+	margin-top: 10px;
+
+	mat-form-field {
+		width: 50%;
+		margin-right: 15px;
+	}
+}
+
+.add-more {
+	background-color: transparent;
+	outline: none;
+	border: none;
+
+	color: #219FD7;
+	font-size: 14px;
+	
+	margin-top: 15px;
+
+	cursor: pointer;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+.button-submit {
+	border: 1px solid #219FD7;
+	width: 100%;
+}
